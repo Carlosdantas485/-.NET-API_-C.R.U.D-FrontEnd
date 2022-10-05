@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css';
+@import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+
+.user{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  padding: 1px;
+}

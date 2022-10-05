@@ -1,0 +1,68 @@
+<h1>eventos</h1>
+<hr>
+<div class="form-inline">
+  <div class="form-group mb-2">
+    <label for=""> Filtar: </label>
+    <input type=""
+      [(ngModel)]="filterList"
+      class="form-control mr-2"
+      placeholder="buscar"
+      name=""
+      id="">
+  </div>
+</div>
+<h3>Resultados para: {{filterList}}</h3>
+
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>#</th>
+      <th>
+        <button class="btn btn-outline-light btn-sm" (click)="toggleImage()">
+          {{!showImage ? 'Mostar imagem' : 'Ocultar imagem'}}
+        </button>
+      </th>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Senha</th>
+      <th>Saldo</th>
+      <th>Telefone</th>
+      <th>options</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="eventos && eventos.length">
+    <tr *ngFor="let evento of eventosFiltrados">
+      <td>{{evento.eventoId}}</td>
+      <td>
+        <img [collapse]="showImage"
+        [isAnimated]="true"
+        src="{{evento.url}}"
+        alt=""
+        class="user"
+        >
+      </td>
+      <td>{{evento.userName}}</td>
+      <td>{{evento.email}}</td>
+      <td>{{evento.password}}</td>
+      <td>{{evento.balance}}</td>
+      <td>{{evento.phone}}</td>
+      <td>
+        <button class="btn btn-primary btn-sm mr-2">Editar</button>
+        <button class="btn btn-danger btn-sm">Deletar</button>
+      </td>
+    </tr>
+  </tbody>
+
+  <tfoot *ngIf="!eventos.length">
+    <tr>
+      <td colspan="8" class="text-center">
+        <h4>nenhum evento encontrado</h4>
+      </td>
+    </tr>
+  </tfoot>
+</table>
+
+
+
+
+
